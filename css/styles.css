@@ -50,6 +50,27 @@ body {
   padding-top: 120px;
   padding-bottom: 120px;
 }
+.active::after {
+  content: " ";
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--IRIS);
+  position: relative;
+  top: 23px;
+}
+/* .header-link {
+  content: " ";
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--IRIS);
+  position: relative;
+  top: 23px;
+} */
+
 /* End of General Style */
 
 /* Header Section (NAV) */
@@ -86,6 +107,7 @@ body {
 }
 .link:hover {
   color: var(--IRIS);
+  cursor: pointer;
 }
 
 /* End of Header Section (NAV) */
@@ -271,28 +293,28 @@ body {
   background-color: var(--IRIS);
   transition: 0s;
 }
-.p-project-img:hover img,
+/* .p-project-img:hover img,
 .p-project-img:focus img {
   opacity: 0.5;
   border: 2px solid var(--IRIS);
   transition: 0s;
-}
+} */
 
-.portfolio .p-list {
+/* .portfolio  */
+.p-project .p-list {
   width: 100%;
   flex-wrap: wrap;
   gap: 32px;
   justify-content: center;
   align-items: center;
 }
-.portfolio li img {
+.p-project .p-project-img img {
   width: 100%;
-  transition: 1s;
+  display: block;
 }
-.portfolio li {
+.p-project .p-project-img {
   width: 25%;
   border: 1px solid var(--CORNFLOWER);
-  transition: 1s;
 }
 .p-caption {
   flex-direction: column;
@@ -301,13 +323,37 @@ body {
 }
 .p-caption-header {
   color: var(--NAVY-BLUE);
-  /* Header 3 */
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
-  /* 120% */
   letter-spacing: 0.4px;
   margin-bottom: 8px;
+}
+.p-project {
+  overflow: hidden;
+}
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+.project-image-caption {
+  position: absolute;
+  background-color: rgba(77, 90, 229, 0.7);
+  color: white;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.p-project-img:hover .project-image-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+.project-image-caption {
+  padding: 40px 32px;
 }
 /* End of Portfolio Styling Section */
 
